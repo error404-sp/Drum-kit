@@ -77,15 +77,4 @@ h3{
   
 
 }
-footer{
-  position:absolute;
-  text-align:center;
-  background:#ffc600;
-  color: black;
-  height: 20px;
-  padding-top: 10px;
-  font-size: 12px;
-  bottom:0;
-  width: 100vw;
 
-}
