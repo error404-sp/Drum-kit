@@ -15,8 +15,21 @@ window.addEventListener('keydown',e=>{
     
 });
 
-const keys = document.querySelectorAll('.key');
-keys.forEach(key=>{
-    
-    
+const buttons = document.querySelectorAll(`button`);
+buttons.forEach(button =>{
+button.addEventListener('click',g=>{
+    //console.log(g);
+    const audiokey = button.getAttribute('data-key');
+    //console.log(audiokey);
+    const audio1 = document.querySelector(`audio[data-key="${audiokey}"]`);
+    if(!audio1) return;
+    audio1.currentTime = 0;
+    audio1.play();
+    button.classList.add('playing');
+    button.addEventListener('transitionend',f=>{
+        if(f.propertyName!=='transform')return ;
+        f.target.classList.remove('playing');
+    })
+
+});
 });
